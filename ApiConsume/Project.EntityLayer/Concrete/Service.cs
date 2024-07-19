@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Project.EntityLayer.Concrete
 {
-    public class Services
+    public class Service
     {
         public int ServiceId { get; set; }
         public string ServiceIcon { get; set; }

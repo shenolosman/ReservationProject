@@ -8,7 +8,7 @@ namespace Project.EntityLayer.Concrete
 {
     public class MailSubscribe
     {
-        public int SubscribeId { get; set; }
+        public int MailSubscribeId { get; set; }
         public string Mail { get; set; }
     }
 }

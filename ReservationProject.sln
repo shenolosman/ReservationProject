@@ -14,6 +14,10 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Project.DataAccessLayer", "ApiConsume\Project.DataAccessLayer\Project.DataAccessLayer.csproj", "{1917B9C0-722C-4E14-9862-9E6D9036CEC0}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Project.BusinessLayer", "ApiConsume\Project.BusinessLayer\Project.BusinessLayer.csproj", "{9364E2DA-25AF-413D-A1EC-6499468FD878}"
+	ProjectSection(ProjectDependencies) = postProject
+		{1917B9C0-722C-4E14-9862-9E6D9036CEC0} = {1917B9C0-722C-4E14-9862-9E6D9036CEC0}
+		{4AC2DEC3-70BF-4C93-BC67-2842F292DD09} = {4AC2DEC3-70BF-4C93-BC67-2842F292DD09}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Project.DtoLayer", "ApiConsume\Project.DtoLayer\Project.DtoLayer.csproj", "{29ADAD52-C653-46ED-B56B-3884FC3A942F}"
 EndProject
