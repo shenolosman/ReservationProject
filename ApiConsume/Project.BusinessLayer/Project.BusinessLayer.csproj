@@ -19,4 +19,9 @@
     </PackageReference>
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Project.DataAccessLayer\Project.DataAccessLayer.csproj" />
+    <ProjectReference Include="..\Project.EntityLayer\Project.EntityLayer.csproj" />
+  </ItemGroup>
+
 </Project>
