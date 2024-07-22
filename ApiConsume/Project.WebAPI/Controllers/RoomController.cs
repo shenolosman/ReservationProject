@@ -27,7 +27,7 @@ namespace Project.WebAPI.Controllers
             _roomService.TInsert(room);
             return Ok();
         }
-        [HttpDelete]
+        [HttpDelete("{id}")]
         public IActionResult DeleteRoom(int id)
         {
             var findId = _roomService.TGetById(id);
@@ -40,7 +40,7 @@ namespace Project.WebAPI.Controllers
             _roomService.TUpdate(room);
             return Ok();
         }
-        [HttpGet("id")]
+        [HttpGet("{id}")]
         public IActionResult GetRoom(int id)
         {
             return Ok(_roomService.TGetById(id));

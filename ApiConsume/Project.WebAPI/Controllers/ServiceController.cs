@@ -27,7 +27,7 @@ namespace Project.WebAPI.Controllers
             _serviceService.TInsert(service);
             return Ok();
         }
-        [HttpDelete]
+        [HttpDelete("{id}")]
         public IActionResult DeleteService(int id)
         {
             var findId = _serviceService.TGetById(id);
@@ -40,7 +40,7 @@ namespace Project.WebAPI.Controllers
             _serviceService.TUpdate(service);
             return Ok();
         }
-        [HttpGet("id")]
+        [HttpGet("{id}")]
         public IActionResult GetService(int id)
         {
             return Ok(_serviceService.TGetById(id));

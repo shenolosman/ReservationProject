@@ -26,7 +26,7 @@ namespace Project.WebAPI.Controllers
             _staffService.TInsert(staff);
             return Ok();
         }
-        [HttpDelete]
+        [HttpDelete("{id}")]
         public IActionResult DeleteStaff(int id)
         {
             var findId = _staffService.TGetById(id);
@@ -39,7 +39,7 @@ namespace Project.WebAPI.Controllers
             _staffService.TUpdate(staff);
             return Ok();
         }
-        [HttpGet("id")]
+        [HttpGet("{id}")]
         public IActionResult GetStaff(int id)
         {
             return Ok(_staffService.TGetById(id));

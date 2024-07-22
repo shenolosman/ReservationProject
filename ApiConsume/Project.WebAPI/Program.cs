@@ -31,6 +31,15 @@ builder.Services.AddScoped<ISubscribeDal, EfSubscribeDal>();
 builder.Services.AddScoped<ISubscribeService, MailSubscribeManager>();
 
 
+builder.Services.AddAutoMapper(typeof(Program));
+
+builder.Services.AddCors(opt =>
+{
+    opt.AddPolicy("ReservationApiCors", opts =>
+    {
+        opts.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod();
+    });
+});
 
 var app = builder.Build();
 
@@ -40,6 +49,9 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+app.UseRouting();
+
+app.UseCors("ReservationApiCors");
 
 app.UseAuthorization();
 
