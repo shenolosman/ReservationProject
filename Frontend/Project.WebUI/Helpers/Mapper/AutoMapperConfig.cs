@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using Project.EntityLayer.Concrete;
+using Project.WebUI.Dtos.AppUserDto;
 using Project.WebUI.Dtos.ServiceDto;
 using Project.WebUI.Dtos.StaffDto;
 using Project.WebUI.Dtos.TestimonialDto;
@@ -21,6 +22,10 @@ namespace Project.WebUI.Helpers.Mapper
             CreateMap<ResultTestimonialDto, Testimonial>().ReverseMap();
             CreateMap<UpdateTestimonialDto, Testimonial>().ReverseMap();
             CreateMap<CreateTestimonialDto, Testimonial>().ReverseMap();
+
+            CreateMap<CreateAppUserDto, AppUser>().ReverseMap();
+            CreateMap<LoginAppUserDto, AppUser>().ReverseMap();
+
         }
     }
 }
