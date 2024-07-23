@@ -1,6 +1,6 @@
-﻿namespace Project.WebUI.Models.Testimonial
+﻿namespace Project.WebUI.Dtos.TestimonialDto
 {
-    public class TestimonialViewModel
+    public class ResultTestimonialDto
     {
         public int TestimonialId { get; set; }
         public string Name { get; set; }

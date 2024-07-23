@@ -1,6 +1,7 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using AutoMapper;
+using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
-using Project.WebUI.Models.Staff;
+using Project.WebUI.Dtos.StaffDto;
 using System.Text;
 
 namespace Project.WebUI.Controllers
@@ -8,10 +9,11 @@ namespace Project.WebUI.Controllers
     public class StaffController : Controller
     {
         private readonly IHttpClientFactory _httpClientFactory;
-
-        public StaffController(IHttpClientFactory httpClientFactory)
+        private readonly IMapper _mapper;
+        public StaffController(IHttpClientFactory httpClientFactory, IMapper mapper)
         {
             _httpClientFactory = httpClientFactory;
+            _mapper = mapper;
         }
         public async Task<IActionResult> Index()
         {
@@ -21,7 +23,7 @@ namespace Project.WebUI.Controllers
             if (responseMsg.IsSuccessStatusCode)
             {
                 var jsData = await responseMsg.Content.ReadAsStringAsync();
-                var values = JsonConvert.DeserializeObject<List<StaffViewModel>>(jsData);
+                var values = JsonConvert.DeserializeObject<List<ResultStaffDto>>(jsData);
                 return View(values);
             }
             return View();
@@ -29,8 +31,10 @@ namespace Project.WebUI.Controllers
         [HttpGet]
         public IActionResult AddStaff() { return View(); }
         [HttpPost]
-        public async Task<IActionResult> AddStaff(AddStaffViewModel model)
+        public async Task<IActionResult> AddStaff(CreateStaffDto model)
         {
+            if (!ModelState.IsValid) return View();
+
             var client = _httpClientFactory.CreateClient();
             var jsData = JsonConvert.SerializeObject(model);
             StringContent content = new StringContent(jsData, Encoding.UTF8, "application/json");
@@ -61,14 +65,16 @@ namespace Project.WebUI.Controllers
             if (responseMsg.IsSuccessStatusCode)
             {
                 var jsonData=await responseMsg.Content.ReadAsStringAsync();
-                var values = JsonConvert.DeserializeObject<UpdateStaffViewModel>(jsonData);
+                var values = JsonConvert.DeserializeObject<UpdateStaffDto>(jsonData);
                 return View(values);
             }
             return View();
         }
         [HttpPost]
-        public async Task<IActionResult> UpdateStaff(UpdateStaffViewModel model)
+        public async Task<IActionResult> UpdateStaff(UpdateStaffDto model)
         {
+            if (!ModelState.IsValid) return View();
+
             var client = _httpClientFactory.CreateClient();
             var jsonData= JsonConvert.SerializeObject(model);
             StringContent content = new StringContent(jsonData,Encoding.UTF8,"application/json");

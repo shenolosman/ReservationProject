@@ -1,4 +1,4 @@
-﻿@model AddStaffViewModel
+﻿@model CreateStaffDto
 @{
     ViewData["Title"] = "Add Staff";
     Layout = "~/Views/AdminLayout/_AdminLayout.cshtml";
@@ -10,14 +10,17 @@
 <form method="post">
     <label>Staff name</label>
     <input type="text" asp-for="Name" class="form-control"/>
+    <span asp-validation-for="Name" class="text-danger"></span>
     <br />
 
     <label>Staff Title</label>
     <input type="text" asp-for="Title" class="form-control" />
+    <span asp-validation-for="Title" class="text-danger"></span>
     <br />
 
     <label>Soical media 1</label>
     <input type="text" asp-for="SocialMedia1" class="form-control" />
+
     <br />
 
     <label>Soical media 2</label>
