@@ -30,6 +30,9 @@ builder.Services.AddScoped<ITestimonialService, TestimonialManager>();
 builder.Services.AddScoped<ISubscribeDal, EfSubscribeDal>();
 builder.Services.AddScoped<ISubscribeService, MailSubscribeManager>();
 
+builder.Services.AddScoped<IAboutDal, EfAboutUsDal>();
+builder.Services.AddScoped<IAboutUsService, AboutUsManager>();
+
 
 builder.Services.AddAutoMapper(typeof(Program));
 

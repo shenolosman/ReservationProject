@@ -20,5 +20,6 @@ namespace Project.DataAccessLayer.Concrete
         public DbSet<Staff> Staff { get; set; }
         public DbSet<MailSubscribe> MailSubscribes { get; set; }
         public DbSet<Testimonial> Testimonial { get; set; }
+        public DbSet<AboutUs> HomePageAboutUs { get; set; }
     }
 }
