@@ -33,6 +33,10 @@ builder.Services.AddScoped<ISubscribeService, MailSubscribeManager>();
 builder.Services.AddScoped<IAboutDal, EfAboutUsDal>();
 builder.Services.AddScoped<IAboutUsService, AboutUsManager>();
 
+builder.Services.AddScoped<IBookingDal, EfBookingDal>();
+builder.Services.AddScoped<IBookingService, BookingManager>();
+
+
 
 builder.Services.AddAutoMapper(typeof(Program));
 
