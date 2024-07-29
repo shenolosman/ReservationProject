@@ -5,6 +5,7 @@ using Project.WebUI.Dtos.AppUserDto;
 using Project.WebUI.Dtos.RoomDto;
 using Project.WebUI.Dtos.ServiceDto;
 using Project.WebUI.Dtos.StaffDto;
+using Project.WebUI.Dtos.SubscribeDto;
 using Project.WebUI.Dtos.TestimonialDto;
 
 namespace Project.WebUI.Helpers.Mapper
@@ -32,6 +33,10 @@ namespace Project.WebUI.Helpers.Mapper
             CreateMap<UpdateAboutUsDto, AboutUs>().ReverseMap();
            
             CreateMap<ResultRoomDto, Room>().ReverseMap();
+
+            CreateMap<CreateSubscribeDto, MailSubscribe>().ReverseMap();
+            CreateMap<ResultSubscribeDto, MailSubscribe>().ReverseMap();
+
         }
     }
 }
