@@ -39,7 +39,8 @@ namespace Project.WebUI.Helpers.Mapper
             CreateMap<ResultSubscribeDto, MailSubscribe>().ReverseMap();
 
             CreateMap<CreateBookingDto, Booking>().ReverseMap();
-
+            CreateMap<ResultBookingDto, Booking>().ReverseMap();
+            CreateMap<ApprovedReservationDto, Booking>().ReverseMap();
 
         }
     }

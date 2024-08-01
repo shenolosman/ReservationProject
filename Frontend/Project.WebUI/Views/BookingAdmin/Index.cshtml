@@ -2,6 +2,7 @@
 @{
     ViewData["Title"] = "Index";
     Layout = "~/Views/AdminLayout/_AdminLayout.cshtml";
+    var count = 0;
 }
 
 <h1>Reservations</h1>
@@ -20,18 +21,17 @@
         <tbody>
             @foreach (var item in Model)
             {
-                var count = 0;
+                count++;
                 <tr>
-                    <th>@count++</th>
+                    <th>@count</th>
                     <td>@item.Name</td>
-
-                    <td>@item.Checkin</td>
-                    <td>@item.Checkout</td>
+                    <td>@(((DateTime)item.Checkin).ToString("dd-MM-yyyy"))</td>
+                    <td>@(((DateTime)item.Checkout).ToString("dd-MM-yyyy"))</td>
                     <td>
                         <span class="badge badge-primary px-2">@item.Status</span>
                     </td>
                     <td>
-                        <a href="#" class="btn btn-outline-primary">Accept</a>
+                        <a href="/BookingAdmin/ApprovedReservation/@item.BookingId" class="btn btn-outline-primary">Approve</a>
                         <a href="#" class="btn btn-outline-danger">Reject</a>
                         <a href="#" class="btn btn-outline-warning">Wait</a>
                         <a href="#" class="btn btn-outline-info">Update</a>

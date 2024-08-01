@@ -40,6 +40,19 @@ namespace Project.WebAPI.Controllers
             _bookingService.TUpdate(model);
             return Ok();
         }
+
+        [HttpPut("UpdateReservationStatus")]
+        public IActionResult UpdateReservationStatus(Booking model)
+        {
+            _bookingService.TBookingStatusChangeApproved(model);
+            return Ok();
+        }
+        [HttpPut("UpdateReservationStatusWithId")]
+        public IActionResult UpdateReservationStatusWithId(int id)
+        {
+            _bookingService.BookingStatusChangeApprovedWithId(id);
+            return Ok();
+        }
         [HttpGet("{id}")]
         public IActionResult GetBooking(int id)
         {

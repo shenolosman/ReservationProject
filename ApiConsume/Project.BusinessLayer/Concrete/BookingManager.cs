@@ -17,6 +17,17 @@ namespace Project.BusinessLayer.Concrete
         {
             _bookingDal = bookingDal;
         }
+
+        public void BookingStatusChangeApprovedWithId(int id)
+        {
+            _bookingDal.BookingStatusChangeApprovedWithId(id);
+        }
+
+        public void TBookingStatusChangeApproved(Booking model)
+        {
+            _bookingDal.BookingStatusChangeApproved(model);
+        }
+
         public void TDelete(Booking t)
         {
             _bookingDal.Delete(t);
@@ -24,7 +35,7 @@ namespace Project.BusinessLayer.Concrete
 
         public Booking TGetById(int id)
         {
-           return _bookingDal.GetById(id);
+            return _bookingDal.GetById(id);
         }
 
         public List<Booking> TGetList()
@@ -34,7 +45,7 @@ namespace Project.BusinessLayer.Concrete
 
         public void TInsert(Booking t)
         {
-            _bookingDal.Insert(t);  
+            _bookingDal.Insert(t);
         }
 
         public void TUpdate(Booking t)

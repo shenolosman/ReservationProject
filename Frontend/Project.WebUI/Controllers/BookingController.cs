@@ -25,11 +25,39 @@ namespace Project.WebUI.Controllers
         public async Task<IActionResult> AddBooking(CreateBookingDto model)
         {
             model.Status = "Waiting Approval";
-            var client = _httpClient.CreateClient();
-            var jsonData=JsonConvert.SerializeObject(model);
-            StringContent content = new StringContent(jsonData,Encoding.UTF8,"application/json");
-            var response = await client.PostAsync("http://localhost:5292/api/Booking",content);
-            return RedirectToAction("Index", "Default");
+
+            try
+            {
+                var client = _httpClient.CreateClient();
+
+                // Ensure date formats are correct
+                model.Checkin = model.Checkin.Date;
+                model.Checkout = model.Checkout.Date;
+
+                var jsonData = JsonConvert.SerializeObject(model);
+                StringContent content = new StringContent(jsonData, Encoding.UTF8, "application/json");
+
+                var response = await client.PostAsync("http://localhost:5292/api/Booking", content);
+
+                if (response.IsSuccessStatusCode)
+                {
+                    return RedirectToAction("Index", "Default");
+                }
+                else
+                {
+                    // Log the error response for further inspection
+                    var errorContent = await response.Content.ReadAsStringAsync();
+                    Console.WriteLine($"Failed to add booking: {response.StatusCode}, {response.ReasonPhrase}, {errorContent}");
+                    ModelState.AddModelError("", "Failed to add booking. Please check your input and try again.");
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message, "Exception occurred while adding booking.");
+                ModelState.AddModelError("", "An error occurred while processing your request. Please try again later.");
+            }
+
+            return View(model);
         }
     }
 }
