@@ -7,21 +7,25 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ApiConsume", "ApiConsume", 
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Frontend", "Frontend", "{9AA0D020-0FD9-424B-B59B-6E2B83804D0B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Project.WebAPI", "ApiConsume\Project.WebAPI\Project.WebAPI.csproj", "{65CD7FBE-9FFB-4912-B7EA-B09BA324D52A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Project.WebAPI", "ApiConsume\Project.WebAPI\Project.WebAPI.csproj", "{65CD7FBE-9FFB-4912-B7EA-B09BA324D52A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Project.EntityLayer", "ApiConsume\Project.EntityLayer\Project.EntityLayer.csproj", "{4AC2DEC3-70BF-4C93-BC67-2842F292DD09}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Project.EntityLayer", "ApiConsume\Project.EntityLayer\Project.EntityLayer.csproj", "{4AC2DEC3-70BF-4C93-BC67-2842F292DD09}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Project.DataAccessLayer", "ApiConsume\Project.DataAccessLayer\Project.DataAccessLayer.csproj", "{1917B9C0-722C-4E14-9862-9E6D9036CEC0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Project.DataAccessLayer", "ApiConsume\Project.DataAccessLayer\Project.DataAccessLayer.csproj", "{1917B9C0-722C-4E14-9862-9E6D9036CEC0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Project.BusinessLayer", "ApiConsume\Project.BusinessLayer\Project.BusinessLayer.csproj", "{9364E2DA-25AF-413D-A1EC-6499468FD878}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Project.BusinessLayer", "ApiConsume\Project.BusinessLayer\Project.BusinessLayer.csproj", "{9364E2DA-25AF-413D-A1EC-6499468FD878}"
 	ProjectSection(ProjectDependencies) = postProject
 		{1917B9C0-722C-4E14-9862-9E6D9036CEC0} = {1917B9C0-722C-4E14-9862-9E6D9036CEC0}
 		{4AC2DEC3-70BF-4C93-BC67-2842F292DD09} = {4AC2DEC3-70BF-4C93-BC67-2842F292DD09}
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Project.DtoLayer", "ApiConsume\Project.DtoLayer\Project.DtoLayer.csproj", "{29ADAD52-C653-46ED-B56B-3884FC3A942F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Project.DtoLayer", "ApiConsume\Project.DtoLayer\Project.DtoLayer.csproj", "{29ADAD52-C653-46ED-B56B-3884FC3A942F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Project.WebUI", "Frontend\Project.WebUI\Project.WebUI.csproj", "{A96929C2-700D-4EDB-88C2-F05832151B8A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Project.WebUI", "Frontend\Project.WebUI\Project.WebUI.csproj", "{A96929C2-700D-4EDB-88C2-F05832151B8A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "JwtProject", "JwtProject", "{49A3905B-73CE-4E9A-816D-6377EAD65257}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApiJwtProject", "JwtProject\WebApiJwtProject\WebApiJwtProject.csproj", "{4D62BE43-F5C9-4C21-A427-F0E82B699A03}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -53,6 +57,10 @@ Global
 		{A96929C2-700D-4EDB-88C2-F05832151B8A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A96929C2-700D-4EDB-88C2-F05832151B8A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A96929C2-700D-4EDB-88C2-F05832151B8A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4D62BE43-F5C9-4C21-A427-F0E82B699A03}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4D62BE43-F5C9-4C21-A427-F0E82B699A03}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4D62BE43-F5C9-4C21-A427-F0E82B699A03}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4D62BE43-F5C9-4C21-A427-F0E82B699A03}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -64,6 +72,7 @@ Global
 		{9364E2DA-25AF-413D-A1EC-6499468FD878} = {4AA95500-7068-42E5-B144-19D09B204DBA}
 		{29ADAD52-C653-46ED-B56B-3884FC3A942F} = {4AA95500-7068-42E5-B144-19D09B204DBA}
 		{A96929C2-700D-4EDB-88C2-F05832151B8A} = {9AA0D020-0FD9-424B-B59B-6E2B83804D0B}
+		{4D62BE43-F5C9-4C21-A427-F0E82B699A03} = {49A3905B-73CE-4E9A-816D-6377EAD65257}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {8F77E1A5-D862-4B94-80F8-AA2AB5882F4E}
