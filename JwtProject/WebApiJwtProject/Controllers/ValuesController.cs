@@ -19,5 +19,16 @@ namespace WebApiJwtProject.Controllers
         {
             return Ok("Welcome");
         }
+        [HttpGet("[action]")]
+        public IActionResult Test4()
+        {
+            return Ok(new CreateToken().TokenGenerateAdmin());
+        }
+        [Authorize(Roles ="Admin,Visitor")]
+        [HttpGet("[action]")]
+        public IActionResult Test3()
+        {
+            return Ok("Welcome Admin,Visitor");
+        }
     }
 }
