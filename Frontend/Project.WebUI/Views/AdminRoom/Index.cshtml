@@ -11,8 +11,13 @@
 <table class="table table-bordered">
     <tr>
         <th>#</th>
-        <th>Service Title</th>
+        <th>RoomCoverImage</th>
+        <th>Title</th>
         <th>Description</th>
+        <th>Price</th>
+        <th>RoomNumber</th>
+        <th>BedCount</th>
+        <th>BathCount</th>
         <th>Delete</th>
         <th>Update</th>
     </tr>
@@ -20,8 +25,13 @@
     {
         <tr>
             <th>@item.RoomId</th>
+            <td>@item.RoomCoverImage</td>
             <td>@item.Title</td>
             <td>@item.Description</td>
+            <td>@item.Price</td>
+            <td>@item.RoomNumber</td>
+            <td>@item.BedCount</td>
+            <td>@item.BathCount</td>
             <td><a href="/AdminRoom/DeleteRoom/@item.RoomId" class="btn btn-danger">Delete</a></td>
             <td><a href="/AdminRoom/UpdateRoom/@item.RoomId" class="btn btn-success">Update</a></td>
         </tr>

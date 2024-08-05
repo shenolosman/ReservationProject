@@ -1,0 +1,54 @@
+﻿@model UpdateRoomDto
+@{
+    ViewData["Title"] = "UpdateRoom";
+    Layout = "~/Views/AdminLayout/_AdminLayout.cshtml";
+}
+
+<h1>Update Room</h1>
+
+<form method="post">
+    <input type="hidden" asp-for="RoomId" />
+
+    <label>Title</label>
+    <input type="text" asp-for="Title" class="form-control" />
+    <span asp-validation-for="Title" class="text-danger"></span>
+    <br />
+
+    <label>Description</label>
+    <input type="text" asp-for="Description" class="form-control" />
+    <span asp-validation-for="Description" class="text-danger"></span>
+    <br />
+
+    <label>RoomNumber</label>
+    <input type="text" asp-for="RoomNumber" class="form-control" />
+    <span asp-validation-for="RoomNumber" class="text-danger"></span>
+    <br />
+
+    <label>Price</label>
+    <input type="text" asp-for="Price" class="form-control" />
+    <span asp-validation-for="Price" class="text-danger"></span>
+    <br />
+
+    <label>BedCount</label>
+    <input type="number" asp-for="BedCount" class="form-control" />
+    <span asp-validation-for="BedCount" class="text-danger"></span>
+    <br />
+
+    <label>BathCount</label>
+    <input type="number" asp-for="BathCount" class="form-control" />
+    <span asp-validation-for="BathCount" class="text-danger"></span>
+    <br />
+
+    <label>Wifi Yes/No</label>
+    <input type="text" asp-for="Wifi" class="form-control" />
+    <span asp-validation-for="Wifi" class="text-danger"></span>
+    <br />
+
+    <label>Room Cover Image</label>
+    <input type="file" asp-for="RoomCoverImage" class="form-control" />
+    <span asp-validation-for="RoomCoverImage" class="text-danger"></span>
+    <br />
+
+    <button class="btn btn-outline-success">Update</button>
+</form>
+
