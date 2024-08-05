@@ -6,12 +6,12 @@ using System.Text;
 
 namespace Project.WebUI.Controllers
 {
-    public class ServiceController : Controller
+    public class AdminServiceController : Controller
     {
         private readonly IHttpClientFactory _httpClientFactory;
         private readonly IMapper _mapper;
 
-        public ServiceController(IHttpClientFactory httpClientFactory, IMapper mapper)
+        public AdminServiceController(IHttpClientFactory httpClientFactory, IMapper mapper)
         {
             _httpClientFactory = httpClientFactory;
             _mapper = mapper;

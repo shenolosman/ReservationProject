@@ -1,6 +1,7 @@
 ﻿@{
     Layout = null;
 }
+
 <!DOCTYPE html>
 <html lang="en">
 @await Component.InvokeAsync("_HeadPartialComponent")
@@ -9,14 +10,10 @@
         @await Component.InvokeAsync("_SpinnerPartial")
         @await Component.InvokeAsync("_NavbarPartial")
 
-        <!-- Page Header Start -->        
-        @await Component.InvokeAsync("_BookingCoverPartial")
-        <!-- Page Header End -->
-        @* @await Component.InvokeAsync("_ReservationPartial") *@
+        @await Component.InvokeAsync("_ContactCoverPartial")
 
-        <!-- Booking Start -->
-        @await Html.PartialAsync("AddBooking.cshtml")
-        <!-- Booking End -->
+
+        @await Html.PartialAsync("/Views/Contact/SendMessage.cshtml")
 
         @await Html.PartialAsync("/Views/Default/_SubscribePartial.cshtml")
         @await Component.InvokeAsync("_FooterPartial")

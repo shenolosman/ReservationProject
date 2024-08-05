@@ -34,6 +34,8 @@ namespace Project.WebUI.Helpers.Mapper
             CreateMap<UpdateAboutUsDto, AboutUs>().ReverseMap();
            
             CreateMap<ResultRoomDto, Room>().ReverseMap();
+            CreateMap<CreateRoomDto, Room>().ReverseMap();
+            CreateMap<UpdateRoomDto, Room>().ReverseMap();
 
             CreateMap<CreateSubscribeDto, MailSubscribe>().ReverseMap();
             CreateMap<ResultSubscribeDto, MailSubscribe>().ReverseMap();

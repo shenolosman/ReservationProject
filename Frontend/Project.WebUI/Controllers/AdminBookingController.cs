@@ -4,11 +4,11 @@ using Project.WebUI.Dtos.BookingDto;
 
 namespace Project.WebUI.Controllers
 {
-    public class BookingAdminController : Controller
+    public class AdminBookingController : Controller
     {
         private readonly IHttpClientFactory _httpClient;
 
-        public BookingAdminController(IHttpClientFactory httpClient)
+        public AdminBookingController(IHttpClientFactory httpClient)
         {
             _httpClient = httpClient;
         }
