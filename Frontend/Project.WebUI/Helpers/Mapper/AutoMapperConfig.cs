@@ -3,6 +3,7 @@ using Project.EntityLayer.Concrete;
 using Project.WebUI.Dtos.AboutUsDto;
 using Project.WebUI.Dtos.AppUserDto;
 using Project.WebUI.Dtos.BookingDto;
+using Project.WebUI.Dtos.ContactDto;
 using Project.WebUI.Dtos.GuestDto;
 using Project.WebUI.Dtos.RoomDto;
 using Project.WebUI.Dtos.ServiceDto;
@@ -48,6 +49,10 @@ namespace Project.WebUI.Helpers.Mapper
             CreateMap<ResultGuestDto, Guest>().ReverseMap();
             CreateMap<CreateGuestDto, Guest>().ReverseMap();
             CreateMap<UpdateGuestDto, Guest>().ReverseMap();
+
+            CreateMap<CreateContactDto, Contact>().ReverseMap();
+            CreateMap<ResultInboxContactDto, Contact>().ReverseMap();
+            CreateMap<CreateSendMessageDto, SendMessage>().ReverseMap();
 
         }
     }

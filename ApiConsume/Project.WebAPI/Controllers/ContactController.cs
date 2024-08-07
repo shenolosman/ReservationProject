@@ -28,5 +28,10 @@ namespace Project.WebAPI.Controllers
             _contactService.TInsert(model);
             return Ok();
         }
+        [HttpGet("{id}")]
+        public IActionResult GetReceiverContact(int id)
+        {
+            return Ok(_contactService.TGetById(id));
+        }
     }
 }
