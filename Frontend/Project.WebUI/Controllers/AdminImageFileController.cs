@@ -1,9 +1,11 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using System.Net.Http;
 using System.Net.Http.Headers;
 
 namespace Project.WebUI.Controllers
 {
+    [Authorize]
     public class AdminImageFileController : Controller
     {
         private readonly IHttpClientFactory _httpClient;

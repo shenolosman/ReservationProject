@@ -1,10 +1,13 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using Project.WebUI.Dtos.ContactDto;
 using System.Text;
 
 namespace Project.WebUI.Controllers
 {
+    [AllowAnonymous]
+
     public class ContactController : Controller
     {
         private readonly IHttpClientFactory _httpClient;

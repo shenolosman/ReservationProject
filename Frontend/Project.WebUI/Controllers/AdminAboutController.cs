@@ -1,10 +1,13 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using Project.WebUI.Dtos.AboutUsDto;
 using System.Text;
 
 namespace Project.WebUI.Controllers
 {
+    [Authorize]
+
     public class AdminAboutController : Controller
     {
         private readonly IHttpClientFactory _httpClient;

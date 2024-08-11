@@ -1,10 +1,13 @@
 ﻿using MailKit.Net.Smtp;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using MimeKit;
 using Project.WebUI.Models.Mail;
 
 namespace Project.WebUI.Controllers
 {
+    [Authorize]
+
     public class AdminMailController : Controller
     {
         public IActionResult Index()

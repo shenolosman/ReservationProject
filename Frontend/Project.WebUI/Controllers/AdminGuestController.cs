@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using Project.WebUI.Dtos.GuestDto;
 using Project.WebUI.Dtos.GuestDto;
@@ -7,6 +8,8 @@ using System.Text;
 
 namespace Project.WebUI.Controllers
 {
+    [Authorize]
+
     public class AdminGuestController : Controller
     {
         private readonly IHttpClientFactory _httpClient;
