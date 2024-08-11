@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using System.Net.Http;
 using System.Net.Http.Headers;
 
 namespace Project.WebUI.Controllers
@@ -15,21 +16,81 @@ namespace Project.WebUI.Controllers
         {
             return View();
         }
-        [HttpPost]
-        public async Task<IActionResult> Index(IFormFile file)
+        public IActionResult ImageUpload()
         {
-            var stream = new MemoryStream();
+            return View();
+        }
+        [HttpPost]
+        public async Task<IActionResult> ImageUpload(IFormFile file)
+        {
+
+            if (file == null || file.Length == 0)
+            {
+                return BadRequest("No file uploaded.");
+            }
+
+            using var stream = new MemoryStream();
             await file.CopyToAsync(stream);
             var bytes = stream.ToArray();
 
-            ByteArrayContent byteArrayContent = new ByteArrayContent(bytes);
+            using var byteArrayContent = new ByteArrayContent(bytes);
             byteArrayContent.Headers.ContentType = new MediaTypeHeaderValue(file.ContentType);
-            MultipartFormDataContent multipartFormDataContent = new MultipartFormDataContent();
-            multipartFormDataContent.Add(byteArrayContent, "file", file.FileName);
-            var client = _httpClient.CreateClient();
-            await client.PostAsync("http://localhost:5192/api/FileImage", multipartFormDataContent);
 
+            using var multipartFormDataContent = new MultipartFormDataContent();
+            multipartFormDataContent.Add(byteArrayContent, "file", file.FileName);
+
+            var client = _httpClient.CreateClient();
+
+            try
+            {
+                var response = await client.PostAsync("http://localhost:5292/api/FileImage/UploadImage", multipartFormDataContent);
+                response.EnsureSuccessStatusCode();
+            }
+            catch (HttpRequestException ex)
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError, $"Internal server error: {ex.Message}");
+            }
+
+            return View(nameof(Index));
+
+        }
+        public IActionResult UploadFile()
+        {
             return View();
+        }
+        [HttpPost]
+        public async Task<IActionResult> UploadFile(IFormFile file)
+        {
+
+            if (file == null || file.Length == 0)
+            {
+                return BadRequest("No file uploaded.");
+            }
+
+            using var stream = new MemoryStream();
+            await file.CopyToAsync(stream);
+            var bytes = stream.ToArray();
+
+            using var byteArrayContent = new ByteArrayContent(bytes);
+            byteArrayContent.Headers.ContentType = new MediaTypeHeaderValue(file.ContentType);
+
+            using var multipartFormDataContent = new MultipartFormDataContent();
+            multipartFormDataContent.Add(byteArrayContent, "file", file.FileName);
+
+            var client = _httpClient.CreateClient();
+
+            try
+            {
+                var response = await client.PostAsync("http://localhost:5292/api/FileImage/UploadFile", multipartFormDataContent);
+                response.EnsureSuccessStatusCode();
+            }
+            catch (HttpRequestException ex)
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError, $"Internal server error: {ex.Message}");
+            }
+
+            return View(nameof(Index));
+
         }
     }
 }

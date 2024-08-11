@@ -1,0 +1,13 @@
+﻿
+@{
+    ViewData["Title"] = "ImageUpload";
+    Layout = "~/Views/AdminLayout/_AdminLayout.cshtml";
+}
+
+<form method="post" enctype="multipart/form-data" asp-action="ImageUpload">
+    <label>Upload Image</label>
+    <input type="file" name="file" class="form-control" />
+    <br />
+    <button class="btn btn-primary" type="submit">Upload</button>
+</form>
+

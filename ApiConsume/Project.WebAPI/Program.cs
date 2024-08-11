@@ -65,7 +65,7 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 app.UseRouting();
-
+app.UseStaticFiles();
 app.UseCors("ReservationApiCors");
 
 app.UseAuthorization();
