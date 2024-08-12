@@ -14,5 +14,7 @@ namespace Project.EntityLayer.Concrete
         public string? Subject { get; set; }
         public string Message { get; set; }
         public DateTime? Date { get; set; }
+        public int? ContactMessageCategoryId { get; set; }
+        public ContactMessageCategory? ContactMessageCategory { get; set; }
     }
 }

@@ -27,7 +27,7 @@ namespace Project.WebUI.Controllers
             var result = await _signInManager.PasswordSignInAsync(model.Username, model.Password, false, false);
             if (result.Succeeded)
             {
-                return RedirectToAction("Index", "Staff");
+                return RedirectToAction("Index", "AdminContact");
             }
             return View();
         }

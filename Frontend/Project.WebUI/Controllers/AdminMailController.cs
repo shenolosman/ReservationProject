@@ -6,7 +6,8 @@ using Project.WebUI.Models.Mail;
 
 namespace Project.WebUI.Controllers
 {
-    [Authorize]
+    //[Authorize]
+    [AllowAnonymous]
 
     public class AdminMailController : Controller
     {

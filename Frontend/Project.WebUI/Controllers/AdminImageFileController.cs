@@ -5,7 +5,9 @@ using System.Net.Http.Headers;
 
 namespace Project.WebUI.Controllers
 {
-    [Authorize]
+    //[Authorize]
+    [AllowAnonymous]
+
     public class AdminImageFileController : Controller
     {
         private readonly IHttpClientFactory _httpClient;

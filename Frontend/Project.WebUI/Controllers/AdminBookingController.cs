@@ -5,7 +5,8 @@ using Project.WebUI.Dtos.BookingDto;
 
 namespace Project.WebUI.Controllers
 {
-    [Authorize]
+    //[Authorize]
+    [AllowAnonymous]
 
     public class AdminBookingController : Controller
     {

@@ -7,8 +7,7 @@ using System.Threading.Tasks;
 
 namespace Project.DataAccessLayer.Abstract
 {
-    public interface IContactDal : IGenericDal<Contact>
+    public interface IContactMessageCategoryDal : IGenericDal<ContactMessageCategory>
     {
-        public int GetContactCount();
     }
 }

@@ -32,6 +32,11 @@ namespace Project.BusinessLayer.Concrete
             return _sendMessage.GetList();
         }
 
+        public int TGetSendMessageCount()
+        {
+           return _sendMessage.GetSendMessageCount();
+        }
+
         public void TInsert(SendMessage t)
         {
             _sendMessage.Insert(t);

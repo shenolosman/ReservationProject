@@ -2,14 +2,12 @@
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using Project.WebUI.Dtos.ContactDto;
-using Project.WebUI.Dtos.GuestDto;
-using Project.WebUI.Dtos.StaffDto;
-using System.Net.Http;
 using System.Text;
 
 namespace Project.WebUI.Controllers
 {
-    [Authorize]
+    //[Authorize]
+    [AllowAnonymous]
 
     public class AdminContactController : Controller
     {
@@ -23,6 +21,15 @@ namespace Project.WebUI.Controllers
         {
             var client = _httpClient.CreateClient();
             var responseMsg = await client.GetAsync("http://localhost:5292/api/Contact");
+
+            var message1 = await client.GetAsync("http://localhost:5292/api/Contact/GetContactCount");
+            var result1 = await message1.Content.ReadAsStringAsync();
+            ViewBag.ContactCount = result1;
+
+            var message2 = await client.GetAsync("http://localhost:5292/api/SendMessage/GetSendMessageCount");
+            var result2 = await message2.Content.ReadAsStringAsync();
+            ViewBag.SendMessageCount = result2;
+
             if (responseMsg.IsSuccessStatusCode)
             {
                 var jsonData = await responseMsg.Content.ReadAsStringAsync();
@@ -66,6 +73,15 @@ namespace Project.WebUI.Controllers
         {
             var client = _httpClient.CreateClient();
             var responseMsg = await client.GetAsync("http://localhost:5292/api/SendMessage");
+
+            var message1 = await client.GetAsync("http://localhost:5292/api/Contact/GetContactCount");
+            var result1 = await message1.Content.ReadAsStringAsync();
+            ViewBag.ContactCount = result1;
+
+            var message2 = await client.GetAsync("http://localhost:5292/api/SendMessage/GetSendMessageCount");
+            var result2 = await message2.Content.ReadAsStringAsync();
+            ViewBag.SendMessageCount = result2;
+
             if (responseMsg.IsSuccessStatusCode)
             {
                 var jsonData = await responseMsg.Content.ReadAsStringAsync();
@@ -95,6 +111,5 @@ namespace Project.WebUI.Controllers
         {
             return await GetMessageDetailsAsync<GetMessageSendMessageByIdDto>($"http://localhost:5292/api/SendMessage/{id}");
         }
-
     }
 }

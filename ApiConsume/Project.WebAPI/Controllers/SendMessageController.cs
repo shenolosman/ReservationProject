@@ -45,5 +45,10 @@ namespace Project.WebAPI.Controllers
         {
             return Ok(_sendMessage.TGetById(id));
         }
+        [HttpGet("GetSendMessageCount")]
+        public IActionResult GetSendMessageCount()
+        {
+            return Ok(_sendMessage.TGetSendMessageCount());
+        }
     }
 }

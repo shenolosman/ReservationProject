@@ -1,0 +1,38 @@
+﻿@model List<Project.EntityLayer.Concrete.AppUser>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/AdminLayout/_AdminLayout.cshtml";
+}
+
+<table class="table table-xs mb-0">
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>Name</th>
+            <th>City</th>
+            <th>Status</th>
+            <th><i class="note-icon-eraser"></i></th>
+            <th><i class="icon-refresh"></i></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td><img src="@item.ImageUrl" class=" rounded-circle mr-3" alt=""></td>
+                <td>@item.Name @item.Surname</td>
+                <td>
+                    <span>@item.City</span>
+                </td>
+                <td><i class="fa fa-circle-o text-success mr-1"></i>Active</td>
+                <td>
+                    <button class="btn btn-danger">Delete</button>
+                </td>
+                <td>
+                    <button class="btn btn-warning">Update</button>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+<a href="/AdminUsers/AddUser/" class="btn btn-primary">New User</a>

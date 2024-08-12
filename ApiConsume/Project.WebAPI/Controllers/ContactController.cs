@@ -33,5 +33,10 @@ namespace Project.WebAPI.Controllers
         {
             return Ok(_contactService.TGetById(id));
         }
+        [HttpGet("GetContactCount")]
+        public IActionResult GetContactCount()
+        {
+            return Ok(_contactService.TGetContactCount());
+        }
     }
 }

@@ -54,6 +54,14 @@
                                     <label for="subject">Subject</label>
                                 </div>
                             </div>
+
+                            <div class="col-12">
+                                <div class="form-floating">
+                                    @Html.DropDownListFor(x => x.ContactMessageCategoryId, (List<SelectListItem>)ViewBag.SelectList, new { @class = "form-control" })
+                                    <label for="subject">Subject Field</label>
+                                </div>
+                            </div>
+
                             <div class="col-12">
                                 <div class="form-floating">
                                     <textarea class="form-control" placeholder="Leave a message here" id="message" style="height: 150px" asp-for="Message"></textarea>

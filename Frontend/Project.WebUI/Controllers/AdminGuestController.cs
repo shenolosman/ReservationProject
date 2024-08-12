@@ -8,7 +8,8 @@ using System.Text;
 
 namespace Project.WebUI.Controllers
 {
-    [Authorize]
+    //[Authorize]
+    [AllowAnonymous]
 
     public class AdminGuestController : Controller
     {

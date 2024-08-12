@@ -5,10 +5,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Project.DataAccessLayer.Abstract
+namespace Project.BusinessLayer.Abstract
 {
-    public interface IContactDal : IGenericDal<Contact>
+    public interface IContactMessageCategoryService : IGenericService<ContactMessageCategory>
     {
-        public int GetContactCount();
     }
 }
