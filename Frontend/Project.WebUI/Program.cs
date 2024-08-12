@@ -38,6 +38,8 @@ if (!app.Environment.IsDevelopment())
     app.UseExceptionHandler("/Home/Error");
 }
 app.UseStaticFiles();
+app.UseStatusCodePagesWithReExecute("/ErrorPage/Error404","?code={0}");
+app.UseHttpsRedirection();
 
 app.UseRouting();
 
