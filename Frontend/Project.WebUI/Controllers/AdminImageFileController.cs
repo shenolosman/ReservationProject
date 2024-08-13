@@ -5,7 +5,7 @@ using System.Net.Http.Headers;
 
 namespace Project.WebUI.Controllers
 {
-    //[Authorize]
+    //[Authorize(AuthenticationSchemes = "Bearer")]
     [AllowAnonymous]
 
     public class AdminImageFileController : Controller

@@ -5,7 +5,7 @@ using Project.WebUI.Dtos.BookingDto;
 
 namespace Project.WebUI.Controllers
 {
-    //[Authorize]
+    //[Authorize(AuthenticationSchemes = "Bearer")]
     [AllowAnonymous]
 
     public class AdminBookingController : Controller

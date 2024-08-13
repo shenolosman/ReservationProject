@@ -6,12 +6,16 @@ using Project.DataAccessLayer.Concrete;
 using Project.EntityLayer.Concrete;
 using Project.WebUI.Dtos.GuestDto;
 using Project.WebUI.Helpers.ValidationRules.GuestValidationRules;
+using System.Reflection;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddTransient<IValidator<CreateGuestDto>, CreateGuestValidator>();
 builder.Services.AddControllersWithViews().AddFluentValidation();
+builder.Services.AddFluentValidationAutoValidation();
+builder.Services.AddFluentValidationClientsideAdapters();
+builder.Services.AddValidatorsFromAssembly(Assembly.GetExecutingAssembly());
 builder.Services.AddHttpClient();
 builder.Services.AddDbContext<Context>();
 builder.Services.AddIdentity<AppUser, AppRole>().AddEntityFrameworkStores<Context>();

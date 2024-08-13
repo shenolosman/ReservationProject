@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Project.WebUI.Controllers
 {
-    //[Authorize]
+    //[Authorize(AuthenticationSchemes = "Bearer")]
     [AllowAnonymous]
 
     public class AdminLayoutController : Controller

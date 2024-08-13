@@ -1,4 +1,4 @@
-﻿@model List<Project.EntityLayer.Concrete.AppUser>
+﻿@model List<ResultAppUserDto>
 @{
     ViewData["Title"] = "Index";
     Layout = "~/Views/AdminLayout/_AdminLayout.cshtml";
@@ -11,6 +11,7 @@
             <th>Name</th>
             <th>City</th>
             <th>Status</th>
+            <th>Work Location</th>
             <th><i class="note-icon-eraser"></i></th>
             <th><i class="icon-refresh"></i></th>
         </tr>
@@ -25,6 +26,7 @@
                     <span>@item.City</span>
                 </td>
                 <td><i class="fa fa-circle-o text-success mr-1"></i>Active</td>
+                <td>@item.WorkDeparment</td>
                 <td>
                     <button class="btn btn-danger">Delete</button>
                 </td>

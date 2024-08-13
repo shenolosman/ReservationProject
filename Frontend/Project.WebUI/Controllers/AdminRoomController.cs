@@ -7,7 +7,7 @@ using System.Text;
 
 namespace Project.WebUI.Controllers
 {
-    //[Authorize]
+    //[Authorize(AuthenticationSchemes = "Bearer")]
     [AllowAnonymous]
 
     public class AdminRoomController : Controller

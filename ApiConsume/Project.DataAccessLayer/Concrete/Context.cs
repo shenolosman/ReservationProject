@@ -15,6 +15,16 @@ namespace Project.DataAccessLayer.Concrete
         {
             optionsBuilder.UseSqlServer("server=(localdb)\\MSSQLLocalDB;initial catalog=ReservationProjectAPI:integrated security=true");
         }
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);
+
+            modelBuilder.Entity<AppUser>()
+                .HasOne(a => a.WorkLocations)
+                .WithMany(w => w.AppUsers)
+                .HasForeignKey(a => a.WorkLocationId)
+                .OnDelete(DeleteBehavior.Restrict);
+        }
         public DbSet<Room> Rooms { get; set; }
         public DbSet<Service> Services { get; set; }
         public DbSet<Staff> Staff { get; set; }
@@ -26,6 +36,7 @@ namespace Project.DataAccessLayer.Concrete
         public DbSet<Contact> Contacts{ get; set; }
         public DbSet<SendMessage> SendMessages { get; set; }
         public DbSet<ContactMessageCategory> ContactMessageCategories { get; set; }
+        public DbSet<WorkLocation> WorkLocations { get; set; }
 
     }
 }
