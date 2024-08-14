@@ -11,5 +11,7 @@ namespace Project.DataAccessLayer.Abstract
     {
         void BookingStatusChangeApproved(Booking model);
         void BookingStatusChangeApprovedWithId(int id);
+        int GetBookingCount();
+        List<Booking> Last6Booking();
     }
 }

@@ -10,5 +10,6 @@ namespace Project.BusinessLayer.Abstract
     public interface IAppUserService:IGenericService<AppUser>
     {
         IQueryable<AppUser> TUserListWithWorkLocation();
+        int TAppUserCount();
     }
 }

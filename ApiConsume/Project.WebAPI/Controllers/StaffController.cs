@@ -44,5 +44,10 @@ namespace Project.WebAPI.Controllers
         {
             return Ok(_staffService.TGetById(id));
         }
+        [HttpGet("Last4Staff")]
+        public IActionResult Last4Staff()
+        {
+            return Ok(_staffService.TLast4Staff());
+        }
     }
 }

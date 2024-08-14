@@ -9,5 +9,6 @@ namespace Project.DataAccessLayer.Abstract
 {
     public interface IGuestDal : IGenericDal<Guest>
     {
+        int GuestCount();
     }
 }

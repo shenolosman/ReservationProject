@@ -19,6 +19,11 @@ namespace Project.DataAccessLayer.EntityFramework
             _context = context;
         }
 
+        public int AppUserCount()
+        {
+            return _context.Users.Count();
+        }
+
         public IQueryable<AppUser> UserListWithWorkLocation()
         {
             var values = (from AspNetUsers in _context.Users

@@ -10,5 +10,6 @@ namespace Project.DataAccessLayer.Abstract
     public interface IAppUserDal : IGenericDal<AppUser>
     {
         IQueryable<AppUser> UserListWithWorkLocation();
+        int AppUserCount();
     }
 }

@@ -58,5 +58,11 @@ namespace Project.WebAPI.Controllers
         {
             return Ok(_bookingService.TGetById(id));
         }
+        [HttpGet("Last6Booking")]
+        public IActionResult Last6Booking()
+        {
+            return Ok(_bookingService.TLast6Booking());
+        }
+
     }
 }

@@ -11,5 +11,8 @@ namespace Project.BusinessLayer.Abstract
     {
         void TBookingStatusChangeApproved(Booking model);
         void BookingStatusChangeApprovedWithId(int id);
+        int TGetBookingCount();
+        List<Booking> TLast6Booking();
+
     }
 }
