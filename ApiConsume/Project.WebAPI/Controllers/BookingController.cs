@@ -40,17 +40,23 @@ namespace Project.WebAPI.Controllers
             _bookingService.TUpdate(model);
             return Ok();
         }
-
-        [HttpPut("UpdateReservationStatus")]
-        public IActionResult UpdateReservationStatus(Booking model)
+     
+        [HttpGet("BookingApproved/{id}")]
+        public IActionResult BookingApproved(int id)
         {
-            _bookingService.TBookingStatusChangeApproved(model);
+            _bookingService.TBookingStatusChangeApprovedWithId(id);
             return Ok();
         }
-        [HttpPut("UpdateReservationStatusWithId")]
-        public IActionResult UpdateReservationStatusWithId(int id)
+        [HttpGet("BookingDeclined/{id}")]
+        public IActionResult BookingDeclined(int id)
         {
-            _bookingService.BookingStatusChangeApprovedWithId(id);
+            _bookingService.TBookingStatusChangeDeclineWithId(id);
+            return Ok();
+        }
+        [HttpGet("BookingWait/{id}")]
+        public IActionResult BookingWait(int id)
+        {
+            _bookingService.TBookingStatusChangeWaitWithId(id);
             return Ok();
         }
         [HttpGet("{id}")]
@@ -63,6 +69,6 @@ namespace Project.WebAPI.Controllers
         {
             return Ok(_bookingService.TLast6Booking());
         }
-
+        
     }
 }

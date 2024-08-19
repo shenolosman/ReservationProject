@@ -18,14 +18,19 @@ namespace Project.BusinessLayer.Concrete
             _bookingDal = bookingDal;
         }
 
-        public void BookingStatusChangeApprovedWithId(int id)
+        public void TBookingStatusChangeApprovedWithId(int id)
         {
             _bookingDal.BookingStatusChangeApprovedWithId(id);
         }
 
-        public void TBookingStatusChangeApproved(Booking model)
+        public void TBookingStatusChangeDeclineWithId(int id)
         {
-            _bookingDal.BookingStatusChangeApproved(model);
+            _bookingDal.BookingStatusChangeDeclineWithId(id);
+        }
+
+        public void TBookingStatusChangeWaitWithId(int id)
+        {
+            _bookingDal.BookingStatusChangeWaitWithId(id);
         }
 
         public void TDelete(Booking t)

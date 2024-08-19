@@ -16,19 +16,26 @@ namespace Project.DataAccessLayer.EntityFramework
         public EfBookingDal(Context context) : base(context)
         {
             this.context = context;
-        }
-
-        public void BookingStatusChangeApproved(Booking model)
-        {
-            var values = context.Bookings.Where(x => x.BookingId == model.BookingId).FirstOrDefault();
-            values.Status = "Approved";
-            context.SaveChanges();
-        }
+        }    
 
         public void BookingStatusChangeApprovedWithId(int id)
         {
             var values = context.Bookings.Find(id);
             values.Status = "Approved";
+            context.SaveChanges();
+        }
+
+        public void BookingStatusChangeDeclineWithId(int id)
+        {
+            var values = context.Bookings.Find(id);
+            values.Status = "Declined";
+            context.SaveChanges();
+        }
+
+        public void BookingStatusChangeWaitWithId(int id)
+        {
+            var values = context.Bookings.Find(id);
+            values.Status = "Waiting";
             context.SaveChanges();
         }
 

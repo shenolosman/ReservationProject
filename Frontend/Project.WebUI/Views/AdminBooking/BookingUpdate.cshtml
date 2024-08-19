@@ -1,0 +1,66 @@
+﻿@model UpdateBookingDto
+@{
+    ViewData["Title"] = "BookingUpdate";
+    Layout = "~/Views/AdminLayout/_AdminLayout.cshtml";
+}
+
+<h1>Booking Update</h1>
+
+<form method="post">
+    <input type="hidden" asp-for="BookingId" />
+
+    <label> Name</label>
+    <input type="text" asp-for="Name" class="form-control" />
+    <span asp-validation-for="Name" class="text-danger"></span>
+    <br />
+
+    <label>Surname</label>
+    <input type="text" asp-for="Mail" class="form-control" />
+    <span asp-validation-for="Mail" class="text-danger"></span>
+    <br />
+
+    <label>Checkin</label>
+    <input type="date" asp-for="Checkin" class="form-control" />
+    <span asp-validation-for="Checkin" class="text-danger"></span>
+    <br />
+
+    <label>Checkout</label>
+    <input type="date" asp-for="Checkout" class="form-control" />
+    <span asp-validation-for="Checkout" class="text-danger"></span>
+    <br />
+
+    <label>AdultCount</label>
+    <input type="text" asp-for="AdultCount" class="form-control" />
+    <span asp-validation-for="AdultCount" class="text-danger"></span>
+    <br />
+
+    <label>ChildCount</label>
+    <input type="text" asp-for="ChildCount" class="form-control" />
+    <span asp-validation-for="ChildCount" class="text-danger"></span>
+    <br />
+
+    <label>RoomCount</label>
+    <input type="text" asp-for="RoomCount" class="form-control" />
+    <span asp-validation-for="RoomCount" class="text-danger"></span>
+    <br />
+
+    <label>Status</label>
+    <input type="text" asp-for="Status" class="form-control"  />
+    <span asp-validation-for="RoomCount" class="text-danger"></span>
+    <br />
+
+    <label>SprecialRequest</label>
+    <input type="text" asp-for="SprecialRequest" class="form-control" />
+    <span asp-validation-for="RoomCount" class="text-danger"></span>
+    <br />
+
+    <label>Description</label>
+    <input type="text" asp-for="Description" class="form-control" />
+    <span asp-validation-for="Description" class="text-danger"></span>
+    <br />
+
+
+    <button class="btn btn-outline-success">Update</button>
+</form>
+
+
