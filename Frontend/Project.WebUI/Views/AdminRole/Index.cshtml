@@ -1,0 +1,26 @@
+﻿@model List<Project.EntityLayer.Concrete.AppRole>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/AdminLayout/_AdminLayout.cshtml";
+}
+
+<h1>AppRole</h1>
+
+<table class="table table-bordered">
+    <tr>
+        <th>#</th>
+        <th>Role Name</th>
+        <th>Date</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <th>@item.Id</th>
+            <th>@item.Name</th>
+            <td>@item.ConcurrencyStamp</td>
+            <td><a href="/AdminRole/DeleteRole/@item.Id" class="btn btn-danger">Delete</a></td>
+            <td><a href="/AdminRole/UpdateRole/@item.Id" class="btn btn-success">Update</a></td>
+        </tr>
+    }
+</table>
+<a href="/AdminRole/AddRole/" class="btn btn-info">New</a>
